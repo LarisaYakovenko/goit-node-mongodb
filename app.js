@@ -7,14 +7,6 @@ import 'dotenv/config';
 import contactsRouter from "./routes/contactsRouter.js";
 
 const app = express();
-// const DB_HOST = "mongodb+srv://YaLorik:F1rEEOp8bBVxvRw3@cluster0.9ht8ich.mongodb.net/db-contacts?retryWrites=true&w=majority"
-// mongoose.connect(DB_HOST)
-//   .then(() => {
-//   console.log('Database connection successful');
-// }).catch((error) => {
-//   console.log(error.message);
-//   process.exit(1);
-// })
 
 app.use(morgan("tiny"));
 app.use(cors());
@@ -31,7 +23,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-app.listen(3001, () => {
-  console.log("Server is running. Use our API on port: 3001");
+app.listen(3002, () => {
+  console.log("Server is running. Use our API on port: 3002");
 });
 
