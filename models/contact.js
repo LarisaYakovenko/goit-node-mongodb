@@ -1,7 +1,6 @@
 import { Schema, model } from 'mongoose';
-// import Joi from "joi";
 
-import { handleMongooseError } from '../helpers/handleMongooseError';
+import  {handleMongooseError}  from '../helpers/handleMongooseError.js';
 
 export const contactSchema = new Schema({
     name: {
@@ -22,21 +21,5 @@ export const contactSchema = new Schema({
 
 contactSchema.post("save", handleMongooseError);
 
-// export const createContactSchema = Joi.object({
-//   name: Joi.string().required(),
-//   email: Joi.string().required(),
-//   phone: Joi.string().required(),
-//   favorite: Joi.boolean(),
-// })
-
-// export const updateContactSchema = Joi.object({
-//   name: Joi.string().required(),
-//   email: Joi.string().required(),
-//   phone: Joi.string().required(),
-//   favorite: Joi.boolean(),
-// })
-
-// export const schemas = {createContactSchema, updateContactSchema}
-
-export const Contact = model("contact", contactSchema);
-// export { Contact, schemas };
+const Contact = model("contact", contactSchema);
+export { Contact };
