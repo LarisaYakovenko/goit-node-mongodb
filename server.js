@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 import app from "./app"
 
-const { DB_HOST } = process.env;
+const  {DB_HOST, PORT = 3001}  = process.env;
 
 mongoose.connect(DB_HOST)
   .then(() => {
-    app.listen(3001)
+    app.listen(PORT)
   // console.log('Database connection successful');
 }).catch((error) => {
   console.log(error.message);
