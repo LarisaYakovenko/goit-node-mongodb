@@ -6,12 +6,12 @@ import {
   createContact,
   updateContact,
   updateFavorit
-} from "../controllers/contactsControllers.js";
+} from "../../controllers/contactsControllers.js";
 
-import  validateBody  from "../helpers/validateBody.js";
-import { isValidId } from "../middlevares/isValidId.js"
+import  validateBody  from "../../helpers/validateBody.js";
+import  isValidId  from "../../middlevares/isValidId.js"
 // import schemas from "../models/contact.js"
-import { createContactSchema, updateContactSchema, updateFavoriteSchema }from "../schemas/contactsSchemas.js"
+import { createContactSchema, updateContactSchema, updateFavoriteSchema }from "../../schemas/contactsSchemas.js"
 
 const contactsRouter = express.Router();
 
