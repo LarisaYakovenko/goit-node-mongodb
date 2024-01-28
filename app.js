@@ -2,13 +2,10 @@ import express from "express";
 import logger from "morgan";
 import cors from "cors";
 import 'dotenv/config';
-import mongoose from "mongoose";
 
 import contactsRouter from "./routes/api/contactsRouter.js";
 
 const app = express();
-
-const  {DB_HOST, PORT = 3000}  = process.env;
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
@@ -25,10 +22,6 @@ app.use((_, res) => {
 app.use((err, req, res, next) => {
   const { status = 500, message = "Server error" } = err;
   res.status(status).json({ message });
-});
-
-app.listen(3000, () => {
-  console.log("Server is running. Use our API on port: 3000");
 });
 
 export default app;
