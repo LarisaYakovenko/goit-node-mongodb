@@ -10,7 +10,6 @@ import {
 
 import  validateBody  from "../../helpers/validateBody.js";
 import  isValidId  from "../../middlevares/isValidId.js"
-// import schemas from "../models/contact.js"
 import { createContactSchema, updateContactSchema, updateFavoriteSchema }from "../../schemas/contactsSchemas.js"
 
 const contactsRouter = express.Router();
