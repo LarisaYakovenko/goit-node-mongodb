@@ -2,6 +2,8 @@ import express from "express";
 import logger from "morgan";
 import cors from "cors";
 import 'dotenv/config';
+import mongoose from "mongoose";
+
 
 import contactsRouter from "./routes/api/contactsRouter.js";
 
@@ -23,5 +25,18 @@ app.use((err, req, res, next) => {
   const { status = 500, message = "Server error" } = err;
   res.status(status).json({ message });
 });
+
+const  {DB_HOST, PORT = 3000}  = process.env;
+
+mongoose.connect(DB_HOST)
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log('Database connection successful');
+    })
+  }).catch((error) => {
+    console.log(error.message);
+    process.exit(1);
+  })
+
 
 export default app;
