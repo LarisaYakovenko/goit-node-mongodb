@@ -26,7 +26,7 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-const  {DB_HOST, PORT = 3000}  = process.env;
+const  {DB_HOST, PORT = 3002}  = process.env;
 
 mongoose.connect(DB_HOST)
   .then(() => {
@@ -37,6 +37,5 @@ mongoose.connect(DB_HOST)
     console.log(error.message);
     process.exit(1);
   })
-
 
 export default app;
